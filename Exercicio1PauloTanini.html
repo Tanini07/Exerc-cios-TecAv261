@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wid'th=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    <style>
+        label{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button{
+            text-align: left;
+            margin: 5px;
+        }
+        .btlayout{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: purple;
+            border: 3px double;
+            border-width: 2px;
+        }
+        .btlayout:hover{
+            background-color: yellow;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 80%;">Calcule as médias:</h1>
+
+    <div style="text-align: center; background-color: gray; padding: 10px; box-shadow: 2px 2px; border: 3px double;">
+        <label for="nota1"name = "nota1">Primeira Nota:</label>
+    <input id="nota1" type="text" placeholder="Digite a Primeira nota:">
+    <br>
+        <label for="nota2" name = "nota2">Segunda nota:</label>
+    <input id="nota2" type="text" placeholder="Digite a segunda nota:">
+    <br>
+    <button onclick="Calcular();">Calcule</button>
+    <button onclick="limpar();">Limpe</button> <br>
+    <button class="btlayout" onclick="alterarlayout()">Clica curioso</button> <br>
+    <br>
+    <h2 style="text-align: left;" class="result">Resultado:</h2>
+    </div>
+    <script>
+        let modo = "0";
+        function limpar(){
+            const caixa = document.getElementsByTagName("input");
+            caixa [0].value = "";
+            caixa [1].value = "";
+        }
+        function Calcular(){
+            const nota1 = parseFloat(document.getElementById("nota1").value);
+            const nota2 = parseFloat(document.getElementById("nota2").value);
+            let media = (nota1 + nota2)/2
+            const resultado = document.getElementsByClassName("result");
+            resultado[0].innerHTML = "Sua média é: "+ media;
+        }
+        function alterarlayout(){
+            const primeiradiv =
+            document.getElementsByTagName ("div")[0].style;
+            if (modo == "0"){
+            primeiradiv.backgroundColor = "red";
+            primeiradiv.borderRadius = "10px";
+            document.getElementsByTagName("body")[0].style.backgroundColor= "pink";
+            modo = (1);
+            }else{
+                location.reload();
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>
