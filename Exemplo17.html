@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 16 JS</title>
+
+    <style>
+        body{
+            background-image:url(paisagemGay.jpg);
+        }
+        form{
+            background-color: violet;
+            padding: 40px;
+            margin:40px;
+            border-radius: 20px;
+            border: 5px solid magenta;
+            border-style: outset;
+            text-align: center;
+            width: 250px;
+            height: 185px;
+            position: absolute;
+            left:35%;
+        }
+        input[type="text"]{
+            width: 240px;
+            height: 30px;
+            border-radius: 7px;
+        }
+        input[type="text"]:focus{
+            outline: 2px solid white;
+        }
+        input[type="submit"]{
+            height: 40px;
+            width: 100px;
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+        input[type="submit"]:hover{
+            background-color:rgb(169, 104, 226) ;
+        }
+        button{
+            height: 40px;
+            width: 100px;
+            background-color: blueviolet;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <H2 style="text-align: center;">Exemplo 16 JavaScript</H2>
+    <h3 style="text-align: center;">Valição de formulário</h3>
+        <H3>Preencha seus dados:</H3>
+        <label for="idade">Idade:</label>
+        <input type="text" name="idade" id="idade"> <br><br>
+        <p id="msg" style="color: rgb(0, 0, 0); border-radius: 3px;"></p>
+        <!-- <input type="submit" id="idade" value="Enviar"> -->
+        <button id="enviar" onclick="validar()">Enviar</button>
+        
+
+    <script>
+        function validar(){
+            const id = document.getElementById("idade").value;
+            let texto;
+            if(isNaN(id)|| id<1 || id>99)
+                texto = "Preencha com dados válidos.";
+            else
+                texto = "Dados cadastrados";
+
+                document.getElementById("msg").innerHTML = texto;
+            
+        }
+    </script>
+
+</body>
+</html>
