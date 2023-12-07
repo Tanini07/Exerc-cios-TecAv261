@@ -1,0 +1,75 @@
+<!DOCTYPEhtml >
+< html  lang =" pt " >
+< cabeça >
+    < meta  charset =" UTF-8 " >
+    < meta  name =" viewport " content =" largura = largura do dispositivo, escala inicial = 1,0 " >
+    < title > Exercício 1 </ title >
+    <estilo> _ _
+        rótulo {
+            margem superior :  5 px ;
+            margem inferior :  5 px ;
+        }
+        botão {
+            alinhamento de texto : esquerda;
+            margem :  5px ; _
+        }
+        . btlayout {
+            família de fontes : Georgia ,  'Times New Roman' , Times , serif;
+            cor de fundo : roxo;
+            borda :  3 px duplo;
+            largura da borda :  2 px ;
+        }
+        . btlayout : pairar {
+            cor de fundo : amarelo;
+            largura da borda :  2 px ;
+        }
+    </ estilo >
+</ cabeça >
+< corpo >
+    < h1  style =" font-size: 80%; " > Calcular como médias: </ h1 >
+
+    < estilo div  =" alinhamento de texto: centro; cor de fundo: cinza; preenchimento: 10px; sombra de caixa: 2px 2px; borda: 3px duplo; " >
+        < label  for =" nota1 " name = " nota1 " > Primeira Nota: </ label >
+    < input  id =" nota1 " type =" text " placeholder =" Digite a Primeira nota: " >
+    <br> _ _
+        < label  for =" nota2 " name = " nota2 " > Segunda nota: </ label >
+    < input  id =" nota2 " type =" text " placeholder =" Digite a segunda nota: " >
+    <br> _ _
+    < button  onclick =" Calcular(); " > Calcular </ button >
+    < button  onclick =" limpar(); " > Limpar </ button >  < br >
+    < button  class =" btlayout " onclick =" alterarlayout() " > Clique curioso </ button >  < br >
+    <br> _ _
+    < h2  style =" text-align: left; " class =" resultado " > Resultado: </ h2 >
+    </div> _ _
+    <roteiro> _ _
+        deixe  modo  =  "0" ;
+        função  limpar ( ) {
+            const  caixa  =  documento . getElementsByTagName ( "entrada" ) ;
+            caixa  [ 0 ] . valor  =  "" ;
+            caixa  [ 1 ] . valor  =  "" ;
+        }
+        função  Calculadora ( ) {
+            const  nota1  =  parseFloat ( document.getElementById ( " nota1 " ) . valor ) ;
+            const  nota2  =  parseFloat ( document.getElementById ( " nota2 " ) . valor ) ;
+            deixe  mídia  =  ( nota1  +  nota2 ) / 2
+            const  resultado  =  documento . getElementsByClassName ( "resultado" ) ;
+            resultado [ 0 ] . innerHTML  =  "Sua mídia é: " +  media ;
+        }
+        função  alterarlayout ( ) {
+            const  primeiradiv  =
+            documento . getElementsByTagName  ( "div" ) [ 0 ] . estilo ;
+            if  ( modo  ==  "0" ) {
+            primeiradiv . backgroundColor  =  "vermelho" ;
+            primeiradiv . borderRadius  =  "10px" ;
+            documento . getElementsByTagName ( "corpo" ) [ 0 ] . estilo . backgroundColor =  "rosa" ;
+            modo  =  ( 1 ) ;
+            } outro {
+                localização . recarregar ( ) ;
+            }
+
+        }
+
+    </roteiro> _ _
+
+</ corpo >
+</html> _ _
